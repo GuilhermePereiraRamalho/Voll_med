@@ -10,6 +10,8 @@ import med.voll.api.domain.paciente.Paciente;
 
 import java.time.LocalDateTime;
 
+// Trecho de código suprimido
+
 @Table(name = "consultas")
 @Entity(name = "Consulta")
 @Getter
@@ -19,11 +21,11 @@ import java.time.LocalDateTime;
 public class Consulta {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "paciente_id")
+    @JoinColumn(name = "medico_id")
     private Medico medico;
 
     @ManyToOne(fetch = FetchType.LAZY)
